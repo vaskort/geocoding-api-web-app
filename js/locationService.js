@@ -24,7 +24,7 @@ angular.module('app.locationservice', [])
 
       // positions is the object that has the values with the markers' positions
       putMarkers: function(positions){
-        
+
       }
     }
 

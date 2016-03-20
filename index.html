@@ -26,14 +26,17 @@
           <form action="">
             <div class="form-group">
               <label for="exampleInputEmail1">Location</label>
-              <input type="text" class="form-control" id="location" ng-model="locationVal" placeholder="Enter London Location">
+              <input type="text" class="form-control" value="earls" id="location" ng-model="locationVal" placeholder="Enter London Location">
             </div>
             <a class="btn btn-default" href="#" ng-click='findLocation(locationVal)' role="button">Submit</a>
           </form>
         </div>
       </div>
       <div class="col-sm-8">
-        <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+        <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+          <ui-gmap-markers models="markers" idkey="markers.id" coords="'self'" icon="'icon'">
+          </ui-gmap-markers>
+        </ui-gmap-google-map>
       </div>
     </div>
   </div>
