@@ -1,11 +1,27 @@
+body { font-family: 'Dosis', sans-serif; font-weight: 400; padding: 10px; }
+
 .noPadding { padding: 0; }
+
+.mainContainer { float: left; width: 100%; position: relative; overflow: hidden; padding-top: 10px; }
+
+.mainContainer > div { -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -ms-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease; }
+
+.mainContainer .outerMapContainer { float: right; position: absolute; right: 0; }
+
+.mainContainer.active .inputOuterContainer { -webkit-transform: translateX(-100%); -ms-transform: translateX(-100%); transform: translateX(-100%); }
+
+.mainContainer.active .outerMapContainer { position: absolute; right: 0; width: 100%; }
 
 .mapContainer { -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -ms-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease; border: 10px solid #fff; box-shadow: 0 0 5px #ccc; opacity: 0; visibility: hidden; }
 
 .mapContainer.active { opacity: 1; visibility: visible; }
 
-.angular-google-map-container { height: 400px; }
+.angular-google-map-container { height: 400px; width: 100%; }
 
-.inputContainer { border: 10px solid #fff; box-shadow: 0 0 5px #ccc; min-height: 420px; }
+.inputContainer { -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -ms-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease; border: 10px solid #fff; box-shadow: 0 0 5px #ccc; min-height: 420px; }
 
-body { font-family: 'Dosis', sans-serif; font-weight: 400; padding: 10px; }
+.toggleButton { margin-bottom: 10px; }
+
+.toggleButton .glyphicon { -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -ms-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease; }
+
+.toggleButton.active .glyphicon { -webkit-transform: rotate(180deg); -ms-transform: rotate(180deg); transform: rotate(180deg); }
