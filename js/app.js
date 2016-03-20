@@ -4,9 +4,20 @@
 
 
   app.controller('LocationCtrl', function($scope, LocationService){
+
+    $scope.clusterVal = 'none';
+
+    // default value for input
+    $scope.locationVal = 'earls';
+
+    // empty the markers array so we dont have errors at the map init
     $scope.markers = [];
 
     $scope.findLocation = function() {
+
+
+      // erase the old markers array
+      $scope.markers = [];
       LocationService.get($scope.locationVal).then(function(response){
         var locationProperty = response.results[0].geometry.location;
         // console.log(response);
@@ -24,6 +35,7 @@
              });
           }
           console.log($scope.markers);
+          console.log($scope.clusterVal);
         });
       });
     }

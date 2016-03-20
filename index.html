@@ -23,18 +23,36 @@
       <!-- location input -->
       <div class="col-sm-4">
         <div class="inputWrapper">
-          <form action="">
+          <form ng-submit="findLocation(locationVal)">
             <div class="form-group">
               <label for="exampleInputEmail1">Location</label>
               <input type="text" class="form-control" value="earls" id="location" ng-model="locationVal" placeholder="Enter London Location">
             </div>
-            <a class="btn btn-default" href="#" ng-click='findLocation(locationVal)' role="button">Submit</a>
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" ng-model="clusterVal" ng-value="'none'" checked>
+                Default mode
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" ng-model="clusterVal" ng-value="'cluster'">
+                Cluster mode
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" ng-model="clusterVal" ng-value="'spider'">
+                Spider mode
+              </label>
+            </div>
+            <a class="btn btn-default" href="#" ng-click='findLocation(locationVal)' role="button">Find Bus Station</a>
           </form>
         </div>
       </div>
       <div class="col-sm-8">
-        <ui-gmap-google-map center='map.center' zoom='map.zoom'>
-          <ui-gmap-markers models="markers" idkey="markers.id" coords="'self'" icon="'icon'">
+        <ui-gmap-google-map center='map.center' zoom='map.zoom' pan="true">
+          <ui-gmap-markers models="markers" idkey="markers.id" coords="'self'" icon="'icon'" fit="true" type="clusterVal">
           </ui-gmap-markers>
         </ui-gmap-google-map>
       </div>
