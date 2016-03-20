@@ -1,3 +1,39 @@
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+.noPadding {
+  padding:0;
+}
+
+.mapContainer {
+  @include transition(all 0.5s ease);
+  border: 10px solid #fff;
+  box-shadow: 0 0 5px #ccc;
+  opacity:0;
+  visibility: hidden;
+  &.active {
+    opacity:1;
+    visibility: visible;
+  }
+}
+
 .angular-google-map-container {
   height: 400px;
+}
+
+.inputContainer {
+  border: 10px solid #fff;
+  box-shadow: 0 0 5px #ccc;
+  min-height: 420px;
+}
+
+body {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+  padding:10px;
 }

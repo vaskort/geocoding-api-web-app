@@ -4,7 +4,8 @@
 
 
   app.controller('LocationCtrl', function($scope, LocationService){
-
+    // and now that everything is done show the map
+    $scope.mapClass = 'active';
     // default value for how to show markers (cluster, spider, none)
     $scope.clusterVal = 'none';
 
@@ -36,6 +37,9 @@
                  show:false
              });
           }
+
+
+
         });
       });
     }
@@ -61,6 +65,7 @@
       }
     }
 
+    // hide/show the input container
 
   });
 
