@@ -5,6 +5,7 @@
 
   app.controller('LocationCtrl', function($scope, LocationService){
 
+    // default value for how to show markers (cluster, spider, none)
     $scope.clusterVal = 'none';
 
     // default value for input
@@ -23,19 +24,18 @@
         // console.log(response);
         LocationService.getBusStops(locationProperty.lat, locationProperty.lng).then(function(response){
 
-          console.log($scope.locationVal);
           $scope.busStationsArray = response.stops;
-          console.log($scope.busStationsArray.length);
+          console.log(response);
           for (var i = 0; i < $scope.busStationsArray.length; i++){
 
             $scope.markers.push({
                  id:i,
                  latitude: $scope.busStationsArray[i].latitude,
-                 longitude: $scope.busStationsArray[i].longitude
+                 longitude: $scope.busStationsArray[i].longitude,
+                 content: $scope.busStationsArray[i].name,
+                 show:false
              });
           }
-          console.log($scope.markers);
-          console.log($scope.clusterVal);
         });
       });
     }
@@ -45,7 +45,16 @@
         latitude: 51.532580,
         longitude: -0.135965
       },
-      zoom: 8
+      zoom: 11
+    };
+
+    $scope.onClick = function(marker, eventName, model) {
+        // remove the shown markers
+        for (var i = 0; i < $scope.markers.length; i++){
+          $scope.markers[i].show = false;
+        }
+        // and show the clicked one
+        model.show = true;
     };
 
 

@@ -52,7 +52,10 @@
       </div>
       <div class="col-sm-8">
         <ui-gmap-google-map center='map.center' zoom='map.zoom' pan="true">
-          <ui-gmap-markers models="markers" idkey="markers.id" coords="'self'" icon="'icon'" fit="true" type="clusterVal">
+          <ui-gmap-markers models="markers" idkey="markers.id" coords="'self'" icon="'icon'" fit="true" type="clusterVal" click="onClick">
+            <ui-gmap-windows show="show">
+                <div ng-non-bindable>{{content}}</div>
+            </ui-gmap-windows>
           </ui-gmap-markers>
         </ui-gmap-google-map>
       </div>
