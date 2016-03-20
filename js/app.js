@@ -19,6 +19,11 @@
 
     $scope.findLocation = function() {
 
+      // this hides the search box
+      $scope.toggledClass = true;
+      // and refresh the map
+      $scope.refreshMap();
+
       // erase the old markers array
       $scope.markers = [];
 
@@ -40,6 +45,9 @@
                  show:false
              });
           }
+
+
+
         });
       });
     }

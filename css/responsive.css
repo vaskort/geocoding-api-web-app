@@ -1,0 +1,9 @@
+@media all and (max-width:768px){
+  .toggleButton {width: 100%;}
+  .inputOuterContainer {margin-bottom: 20px;}
+  .inputContainer {min-height: 0;}
+  .mainContainer .outerMapContainer, .mainContainer.active .outerMapContainer {position: relative;}
+  /*.mainContainer.active .outerMapContainer {-webkit-transform: translateY(-100%); -ms-transform: translateY(-100%); transform: translateY(-100%);}*/
+  .mainContainer.active .inputOuterContainer {-webkit-transform: translateX(0); -ms-transform: translateX(0); transform: translateX(0);
+                                              -webkit-transform: translateY(-100%); -ms-transform: translateY(-100%); transform: translateY(-100%);}
+}
