@@ -20,6 +20,11 @@ angular.module('app.locationservice', [])
         return $http.get(transportApiUrl + 'lat=' + lat + '&lon=' + lon + '&' + transportApiKeyAndId).then(function(response) {
           return response.data;
         });
+      },
+
+      // positions is the object that has the values with the markers' positions
+      putMarkers: function(positions){
+        
       }
     }
 
