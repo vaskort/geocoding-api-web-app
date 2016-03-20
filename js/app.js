@@ -49,13 +49,17 @@
     };
 
     $scope.onClick = function(marker, eventName, model) {
-        // remove the shown markers
-        for (var i = 0; i < $scope.markers.length; i++){
-          $scope.markers[i].show = false;
-        }
+        $scope.hideMarkers();
         // and show the clicked one
         model.show = true;
     };
+
+    $scope.hideMarkers = function(model){
+      // remove the shown markers
+      for (var i = 0; i < $scope.markers.length; i++){
+        $scope.markers[i].show = false;
+      }
+    }
 
 
   });
