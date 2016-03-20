@@ -15,6 +15,21 @@
   <script type="text/javascript" src="js/locationService.js"></script>
 </head>
 <body ng-controller="LocationCtrl">
-
+  <div class="container">
+    <div class="row row-lg">
+      <!-- location input -->
+      <div class="col-sm-4">
+        <div class="inputWrapper">
+          <form action="">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Location</label>
+              <input type="text" class="form-control" id="location" ng-model="locationVal" placeholder="Enter London Location">
+            </div>
+            <a class="btn btn-default" href="#" ng-click='findLocation(locationVal)' role="button">Submit</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
