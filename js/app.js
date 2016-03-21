@@ -5,7 +5,7 @@
 
   app.controller('LocationCtrl', function($scope, LocationService, uiGmapIsReady, $timeout){
 
-    // and now that everything is done show the map
+    // was going to use this so I can show the map when the search is done but was too much with the toggle
     $scope.mapClass = 'active';
 
     // default value for how to show markers (cluster, spider, none)
@@ -38,16 +38,13 @@
 
           for (var i = 0; i < $scope.busStationsArray.length; i++){
             $scope.markers.push({
-                 id:i,
-                 latitude: $scope.busStationsArray[i].latitude,
-                 longitude: $scope.busStationsArray[i].longitude,
-                 content: $scope.busStationsArray[i].name,
-                 show:false
-             });
+              id:i,
+              latitude: $scope.busStationsArray[i].latitude,
+              longitude: $scope.busStationsArray[i].longitude,
+              content: $scope.busStationsArray[i].name,
+              show:false
+            });
           }
-
-
-
         });
       });
     }
@@ -66,9 +63,9 @@
 
     // onclick scope function for markers
     $scope.onClick = function(marker, eventName, model) {
-        $scope.hideMarkers();
-        // and show the clicked one
-        model.show = true;
+      $scope.hideMarkers();
+      // and show the clicked one
+      model.show = true;
     };
 
     $scope.hideMarkers = function(){
@@ -103,9 +100,9 @@
   // angular google map init http://angular-ui.github.io/angular-google-maps/#!/use
   app.config(function(uiGmapGoogleMapApiProvider) {
     uiGmapGoogleMapApiProvider.configure({
-        key: 'AIzaSyAw2pXZURI1WbXDpq99JhyQcr0va44Fyko',
-        v: '3.20', //defaults to latest 3.X anyhow
-        libraries: 'weather,geometry,visualization'
+      key: 'AIzaSyAw2pXZURI1WbXDpq99JhyQcr0va44Fyko',
+      v: '3.20', //defaults to latest 3.X anyhow
+      libraries: 'weather,geometry,visualization'
     });
   });
 
